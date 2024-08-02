@@ -13,34 +13,44 @@ export default function DocsPage() {
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>New Question</h1>
         </div>
-        <form className="w-full max-w-lg p-4 space-y-4">
+        <form className="w-full max-w-lg p-4 space-y-4" style={{ fontSize: '1.2em' }}>
           <Input
             fullWidth
             label="Your Question"
             placeholder="Type your question here..."
           />
-          <div className="flex flex-col gap-2">
-            <label htmlFor="bounty-slider">Bounty Amount: {bounty}</label>
+          <div className="flex items-center gap-2">
             <Slider
-              id="bounty-slider"
               step={1}
-              maxValue={100}
-              minValue={0}
-              defaultValue={10}
-              onValueChange={setBounty}
+              max={100}
+              min={0}
+              value={bounty}
+              onChange={(value) => setBounty(value)}
               className="max-w-md"
             />
+            <Input
+              width="100px"
+              label="Bounty Amount"
+              type="number"
+              value={String(bounty)}
+              onChange={(e) => setBounty(Number(e.target.value))}
+            />
           </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="time-slider">Time Interval (Days): {timeInterval}</label>
+          <div className="flex items-center gap-2">
             <Slider
-              id="time-slider"
               step={1}
-              maxValue={30}
-              minValue={1}
-              defaultValue={7}
-              onValueChange={setTimeInterval}
+              max={72}
+              min={1}
+              value={timeInterval}
+              onChange={(value) => setTimeInterval(value)}
               className="max-w-md"
+            />
+            <Input
+              width="100px"
+              label="Max Response Time (Hours)"
+              type="number"
+              value={String(timeInterval)}
+              onChange={(e) => setTimeInterval(Number(e.target.value))}
             />
           </div>
           <Button type="submit" color="primary" auto>
