@@ -1,6 +1,6 @@
 # Next.js & NextUI Template
 
-This is a template for creating applications using Next.js 14 (pages directory) and NextUI (v2).
+This is a template for creating applications using Next.js 14 (pages directory) and NextUI (v2).a
 
 [Try it on CodeSandbox](https://githubbox.com/nextui-org/next-pages-template)
 
