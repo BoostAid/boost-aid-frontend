@@ -32,7 +32,7 @@ export default async function IndexPage({
             <h1 className="relative max-w-4xl text-3xl font-bold text-red-600 dark:text-red-600 sm:text-8xl">
               BoostAid
             </h1>
-            <h1 className="relative max-w-4xl text-3xl font-bold text-red-600 dark:text-red-600 sm:text-2xl">
+            <h1 className="relative max-w-4xl text-3xl font-bold text-orange-600 dark:text-red-600 sm:text-2xl">
               Powered by Shibarium
             </h1>
           </div>
