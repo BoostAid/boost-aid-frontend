@@ -128,8 +128,8 @@ export default async function DashboardPage({
     });
 
     // Chart Width and Height
-    const width = 600;
-    const height = 450; 
+    const width = 480;
+    const height = 360; 
 
 
     return (
@@ -148,10 +148,10 @@ export default async function DashboardPage({
                     <h1> </h1>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '25px' }}>
-                <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>Bounty Statistics</h1>
+                <h1 style={{ fontSize: '36px' }}>Bounty Statistics</h1>
                 <h1 style={{ fontSize: '20px' }}> ‎  </h1>
                 <h1 style={{ fontSize: '20px' }}> Today, an <strong>average of ${avgBountyChartData.datasets[0].data[avgBountyChartData.datasets[0].data.length - 1]} (CAD) has been staked per question  
-                </strong> and <strong>${bountiesAwardedChartData.datasets[0].data[bountiesAwardedChartData.datasets[0].data.length - 1]} (CAD) have been awarded </strong> to the BoostAid community
+                </strong> and <strong>${bountiesAwardedChartData.datasets[0].data[bountiesAwardedChartData.datasets[0].data.length - 1]} (CAD) have been awarded </strong> to the BoostAid community.
                 </h1>
                 </div>
                 
@@ -172,7 +172,7 @@ export default async function DashboardPage({
                     width: `${width}px`, 
                     height: `${height + 50}px` 
                     }}>
-                    <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Average Bounty (CAD)</h1>
+                    <h1 style={{ fontSize: '20px' }}>Average Bounty (CAD)</h1>
                     <Line 
                         options={getOptions(avgBountyGraphLabel, "Date", "Amount Staked (CAD)", true)} 
                         data={avgBountyChartData} 
@@ -189,7 +189,7 @@ export default async function DashboardPage({
                     width: `${width}px`, 
                     height: `${height + 50}px` 
                     }}>
-                    <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Bounties Awarded (CAD)</h1>
+                    <h1 style={{ fontSize: '20px' }}>Bounties Awarded (CAD)</h1>
                     <Line 
                         options={getOptions(bountiesAwardedGraphLabel, "Date", "Awarded (CAD)", true)} 
                         data={bountiesAwardedChartData} 
@@ -200,7 +200,7 @@ export default async function DashboardPage({
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '25px' }}>
                     <h1 style={{ fontSize: '20px' }}> ‎  </h1>
-                    <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>Question Statistics</h1>
+                    <h1 style={{ fontSize: '36px' }}>Question Statistics</h1>
                     <h1 style={{ fontSize: '20px' }}> ‎  </h1>
                     <h1 style={{ fontSize: '20px' }}>Today, <strong>{questionsAskedChartData.datasets[0].data[questionsAskedChartData.datasets[0].data.length - 1]} questions have been asked </strong>
                     and <strong>{questionsAnsweredChartData.datasets[0].data[questionsAnsweredChartData.datasets[0].data.length - 1]} questions have been marked as answered </strong> by the BoostAid community.
@@ -222,7 +222,7 @@ export default async function DashboardPage({
                     width: `${width}px`, 
                     height: `${height + 50}px` 
                     }}>
-                    <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Questions Asked</h1>
+                    <h1 style={{ fontSize: '20px' }}>Questions Asked</h1>
                     <Line 
                         options={getOptions(questionsAskedGraphLabel, "Date", "Questions Asked", false)} 
                         data={questionsAskedChartData} 
@@ -239,7 +239,7 @@ export default async function DashboardPage({
                     width: `${width}px`, 
                     height: `${height + 50}px` 
                     }}>
-                    <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Questions Answered</h1>
+                    <h1 style={{ fontSize: '20px' }}>Questions Answered</h1>
                     <Line 
                         options={getOptions(questionsAnsweredGraphLabel, "Date", "Questions Answered", false)} 
                         data={questionsAnsweredChartData} 
