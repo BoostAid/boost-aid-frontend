@@ -1,55 +1,52 @@
-# Next.js & NextUI Template
+# Boost-Aid-front
 
-This is a template for creating applications using Next.js 14 (pages directory) and NextUI (v2).
+## Prerequisites
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-pages-template)
+Ensure you have the following installed on your machine:
 
->Note: Since Next.js 14, the pages router is recommend migrating to the [new App Router](https://nextjs.org/docs/app) to leverage React's latest features
->
->Read more: [Pages Router](https://nextjs.org/docs/pages)
+- Bun
+- Node.js
 
-## Technologies Used
+## Getting Started
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [NextUI](https://nextui.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+Follow these steps to set up and run the application locally.
 
-## How to Use
-
-To create a new project based on this template using `create-next-app`, run the following command:
+### 1. Clone the Repository
 
 ```bash
-npx create-next-app -e https://github.com/nextui-org/next-pages-template
+git clone https://github.com/ETHTorontoHackathon/boost-aid-frontend.git
+
+cd boost-aid-frontend
+
+##change branch if needed
+
+bun install
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+### 2. Create '.env.local' file
+Create a .env.local file in the root directory of the project with the following content:
 
 ```bash
-npm install
+cp .env.example .env.local
 ```
 
-### Run the development server
+If you are using local backend specify the link NEXT_PUBLIC_API_ROOT.
+
+If you want to use the database of the app: 
 
 ```bash
-npm run dev
+NEXT_PUBLIC_API_ROOT='http://99.241.49.15:3000'
 ```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+Specify the local front end root:
 
 ```bash
-public-hoist-pattern[]=*@nextui-org/*
+NEXT_PUBLIC_APP_URL='http://localhost:3000'
+NEXTAUTH_URL='http://localhost:3000'
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+### 3. Build and Run the front end 
+```bash
+bun run dev:web
+```
 
-## License
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-pages-template/blob/main/LICENSE).

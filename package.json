@@ -1,56 +1,45 @@
 {
-	"name": "next-pages-template",
-	"version": "0.1.0",
-	"private": true,
-	"license": "MIT",
-	"scripts": {
-		"dev": "next dev --turbo",
-		"build": "next build",
-		"start": "next start",
-		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
-	},
-	"dependencies": {
-		"@nextui-org/button": "2.0.37",
-		"@nextui-org/code": "2.0.32",
-		"@nextui-org/input": "2.2.4",
-		"@nextui-org/kbd": "2.0.33",
-		"@nextui-org/link": "2.0.34",
-		"@nextui-org/listbox": "2.1.25",
-		"@nextui-org/navbar": "2.0.36",
-		"@nextui-org/react": "^2.4.6",
-		"@nextui-org/snippet": "2.0.41",
-		"@nextui-org/switch": "2.0.33",
-		"@nextui-org/system": "2.2.5",
-		"@nextui-org/table": "^2.0.39",
-		"@nextui-org/theme": "2.2.9",
-		"@react-aria/visually-hidden": "3.8.12",
-		"clsx": "2.1.1",
-		"framer-motion": "~11.1.1",
-		"intl-messageformat": "^10.5.0",
-		"next": "^14.2.5",
-		"next-themes": "^0.2.1",
-		"react": "18.3.1",
-		"react-dom": "18.3.1"
-	},
-	"devDependencies": {
-		"@types/node": "20.5.7",
-		"@types/react": "18.3.3",
-		"@types/react-dom": "18.3.0",
-		"@typescript-eslint/eslint-plugin": "7.2.0",
-		"@typescript-eslint/parser": "7.2.0",
-		"autoprefixer": "10.4.19",
-		"eslint": "^8.57.0",
-		"eslint-config-prettier": "^8.2.0",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-jsx-a11y": "^6.4.1",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-prettier": "^5.1.3",
-		"eslint-plugin-react": "^7.23.2",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-unused-imports": "^3.2.0",
-		"postcss": "8.4.38",
-		"tailwind-variants": "0.1.20",
-		"tailwindcss": "3.4.3",
-		"typescript": "5.0.4"
-	}
+  "name": "nextjs-template",
+  "private": true,
+  "scripts": {
+    "build": "turbo build ",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
+    "db:push": "cd ./packages/db/ && bun db:push",
+    "dev": "turbo dev --parallel",
+    "dev:web": "turbo dev --parallel --filter !stripe",
+    "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
+    "format:fix": "turbo format --continue -- --write --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
+    "lint": "turbo lint -- --quiet -- --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg check",
+    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' ",
+    "typecheck": "turbo typecheck",
+    "postinstall": "bun run check-deps",
+    "check-deps": "check-dependency-version-consistency .",
+    "gen": "turbo gen --config 'turbo/generators/config.ts'",
+    "compile-tw-config": "tsc --noEmitOnError tooling/tailwind-config/index.ts --outDir  ./",
+    "tailwind-config-viewer": " tailwind-config-viewer -c ./index.js -o -p 3333"
+  },
+  "devDependencies": {
+    "@turbo/gen": "1.13.3",
+    "check-dependency-version-consistency": "4.1.0",
+    "prettier": "3.2.5",
+    "tailwind-config-viewer": "^2.0.4",
+    "turbo": "1.13.3",
+    "typescript": "5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "prettier": "@saasfly/prettier-config",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ],
+  "packageManager": "bun@v1.1.10",
+  "dependencies": {
+    "@nextui-org/react": "^2.4.6",
+    "framer-motion": "11.0.3",
+    "next": "^14.2.5"
+  }
 }
