@@ -128,8 +128,8 @@ export default async function DashboardPage({
     });
 
     // Chart Width and Height
-    const width = 600;
-    const height = 450; 
+    const width = 480;
+    const height = 360; 
 
 
     return (
@@ -151,7 +151,7 @@ export default async function DashboardPage({
                 <h1 style={{ fontSize: '36px', fontWeight: 'bold' }}>Bounty Statistics</h1>
                 <h1 style={{ fontSize: '20px' }}> ‎  </h1>
                 <h1 style={{ fontSize: '20px' }}> Today, an <strong>average of ${avgBountyChartData.datasets[0].data[avgBountyChartData.datasets[0].data.length - 1]} (CAD) has been staked per question  
-                </strong> and <strong>${bountiesAwardedChartData.datasets[0].data[bountiesAwardedChartData.datasets[0].data.length - 1]} (CAD) have been awarded </strong> to the BoostAid community
+                </strong> and <strong>${bountiesAwardedChartData.datasets[0].data[bountiesAwardedChartData.datasets[0].data.length - 1]} (CAD) have been awarded </strong> to the BoostAid community.
                 </h1>
                 </div>
                 
