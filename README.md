@@ -35,7 +35,7 @@ If you are using local backend specify the link NEXT_PUBLIC_API_ROOT.
 If you want to use the database of the app: 
 
 ```bash
-NEXT_PUBLIC_API_ROOT='http://99.241.49.15:3000'
+NEXT_PUBLIC_API_ROOT='https://boost-aid-rest.xyz'
 ```
 Specify the local front end root:
 
